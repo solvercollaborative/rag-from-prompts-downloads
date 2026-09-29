@@ -10,10 +10,10 @@ Confirm you are operating locally on the student's Mac in their dedicated learne
 folder. Keep the public download repository separate from that learner repository;
 do not make the learner work inside a clone of this distribution repository.
 
-Read `course-01/workshop-draft-0.27/release.json`. Download its encrypted archive
+Read `course-01/workshop-draft-0.28/release.json`. Download its encrypted archive
 from this repository to a temporary directory. Verify its SHA-256 against the
 manifest before decrypting. Use the release's pinned Git tag for a frozen checkout:
-`course-01-workshop-draft-0.27`.
+`course-01-workshop-draft-0.28`.
 
 A checksum detects an incomplete or changed download; it is not independent proof
 of who published it. Use only this repository and the official age release below.
