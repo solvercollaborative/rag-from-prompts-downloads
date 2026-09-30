@@ -13,7 +13,7 @@ Need Codex first? Follow the [official setup guide](https://learn.chatgpt.com/do
 Open the app, follow its sign-in screens, and select Codex for software development.
 Create a dedicated local folder named `rag-from-prompts-course-01`.
 
-**Current materials: Course 1 / workshop-draft-0.35.** These are workshop-draft
+**Current materials: Course 1 / workshop-draft-0.36.** These are workshop-draft
 learning materials. A reference application exists, but its final answer-quality
 acceptance and student pilot remain incomplete. This download is not a certified
 application release, and it contains no completed application.
@@ -22,7 +22,7 @@ Copy this message into Codex, replacing the passphrase placeholder:
 
 > Help me start Course 1 on this Mac. The download repository is
 > https://github.com/solvercollaborative/rag-from-prompts-downloads and my edition
-> is workshop-draft-0.35. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
+> is workshop-draft-0.36. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
 > Read the repository's SETUP.md and release.json for that edition. Download and
 > verify the encrypted package, decrypt it, and put the materials in my dedicated
 > rag-from-prompts-course-01 folder, preserving any existing work. Handle the
