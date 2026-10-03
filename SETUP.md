@@ -10,10 +10,17 @@ Confirm you are operating locally on the student's Mac in their dedicated learne
 folder. Keep the public download repository separate from that learner repository;
 do not make the learner work inside a clone of this distribution repository.
 
-Read `course-01/workshop-draft-0.47/release.json`. Download its encrypted archive
-from this repository to a temporary directory. Verify its SHA-256 against the
-manifest before decrypting. Use the release's pinned Git tag for a frozen checkout:
-`course-01-workshop-draft-0.47`.
+Use the edition named in the student's starter prompt, book or class materials.
+For that edition, read `course-01/<edition>/release.json` and confirm its `edition`
+field matches. Download the encrypted archive named in that manifest to a temporary
+directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
+`course-01-<edition>` for a frozen checkout; for example, edition
+`workshop-draft-0.47` uses `course-01-workshop-draft-0.47`.
+
+Do not silently substitute a newer or older edition. If no edition was supplied,
+ask the student which materials they received. If the requested edition has not
+been published, report that missing edition rather than downloading a different
+package. Preserve existing learner work in either case.
 
 A checksum detects an incomplete or changed download; it is not independent proof
 of who published it. Use only this repository and the official age release below.
