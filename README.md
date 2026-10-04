@@ -13,7 +13,7 @@ Need Codex first? Follow the [official setup guide](https://learn.chatgpt.com/do
 Open the app, follow its sign-in screens, and select Codex for software development.
 Create a dedicated local folder named `rag-from-prompts-course-01`.
 
-**Current materials: Course 1 / workshop-draft-0.50.** These are workshop-draft
+**Current materials: Course 1 / workshop-draft-0.51.** These are workshop-draft
 learning materials. The recorded draft-0.48 reference completed all 25 builds,
 immediate repeats and a full replay after documented corrections. Draft 0.49
 adds security guidance and package-hash requirements; its hash-lock correction
@@ -22,7 +22,8 @@ application demonstrations were checked against actual source passages. Other
 evaluation questions exposed incorrect or incomplete answers; a few successful
 examples do not promise correct answers to every question. Fresh-machine setup
 and a student pilot remain unrun. Draft 0.50 corrects the referenced book title;
-application behavior and build prompts are unchanged from draft 0.49.
+application behavior and build prompts are unchanged from draft 0.49. Draft 0.51
+clarifies the instructor testing system and assistant-led download verification.
 The download contains materials for building
 your app, with no completed application bundled.
 
@@ -30,11 +31,15 @@ Copy this message into Codex, replacing the passphrase placeholder:
 
 > Help me start Course 1 on this Mac. The download repository is
 > https://github.com/solvercollaborative/rag-from-prompts-downloads and my edition
-> is workshop-draft-0.50. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
+> is workshop-draft-0.51. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
 > Read the repository's SETUP.md and release.json for that edition. Download and
 > verify the encrypted package, decrypt it, and put the materials in my dedicated
 > rag-from-prompts-course-01 folder, preserving any existing work. Handle the
-> commands yourself. Open course-download/course-book.pdf and show me where to
+> commands yourself. Report the edition and whether all download and extracted-file
+> checks passed. If any check fails or cannot be completed, stop before copying
+> materials into my course folder and explain the problem; do not bypass the check.
+> Preserve existing work and report any files skipped for that reason.
+> Open course-download/course-book.pdf and show me where to
 > find prompts/01.md. Stop before executing Prompt 01 so I can read it and begin.
 
 You do not need to type terminal commands or create a GitHub account. The shared

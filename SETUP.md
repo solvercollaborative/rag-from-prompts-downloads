@@ -15,7 +15,7 @@ For that edition, read `course-01/<edition>/release.json` and confirm its `editi
 field matches. Download the encrypted archive named in that manifest to a temporary
 directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
 `course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.50` uses `course-01-workshop-draft-0.50`.
+`workshop-draft-0.51` uses `course-01-workshop-draft-0.51`.
 
 Do not silently substitute a newer or older edition. If no edition was supplied,
 ask the student which materials they received. If the requested edition has not
@@ -68,6 +68,10 @@ only the members listed in `release.json`.
 
 ## 4. Place without overwriting student work
 
+Proceed only after all edition, archive and extracted-file checks above have passed.
+If a check fails or cannot be completed, stop before copying materials into the
+learner folder. Explain the problem in plain language; do not bypass the check.
+
 If the learner folder already has `course-origin.json`, compare its source_commit
 with the supplied baseline. A different revision needs a separate new attempt;
 do not replace the original baseline. For the same revision, preserve existing
@@ -86,6 +90,10 @@ Prompt files and their original baseline may be tracked in the student's project
 Validate that the untouched supplied `app/data/books/course.md` matches
 `course-download/source-provenance.json` before first use. If an existing student's
 file differs, preserve it and explain the difference; do not silently restore it.
+
+Report the selected edition, whether all download and extracted-file checks
+passed, the destination folder, and any existing files preserved or skipped.
+Keep this confirmation short and use plain language.
 
 Open `course-download/course-book.pdf`. Show the student `prompts/01.md` and explain
 that only its fenced text build prompt should be sent for execution. Stop here.
