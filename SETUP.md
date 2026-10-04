@@ -15,7 +15,7 @@ For that edition, read `course-01/<edition>/release.json` and confirm its `editi
 field matches. Download the encrypted archive named in that manifest to a temporary
 directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
 `course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.48` uses `course-01-workshop-draft-0.48`.
+`workshop-draft-0.49` uses `course-01-workshop-draft-0.49`.
 
 Do not silently substitute a newer or older edition. If no edition was supplied,
 ask the student which materials they received. If the requested edition has not
@@ -55,8 +55,14 @@ student action. Do not invent a passphrase. On error, stop; never unpack partial
 decrypted output. Ask the student to check their assigned edition and phrase.
 
 After age succeeds, verify the decrypted ZIP's SHA-256 against `release.json`.
-Inspect the ZIP member list before extraction: no absolute paths, `..` traversal,
-or symbolic links. Extract into a NEW temporary staging directory. Check each
+Inspect all members before extracting any. Reject absolute paths, `.` or `..`
+components, backslashes, drive prefixes, names ending in spaces/dots, symbolic
+links or other special files, duplicate/case-colliding names, and file/directory
+conflicts. Bound the ZIP to 256 MiB, 2,000 members, 512 MiB total expanded data,
+128 MiB per member and a maximum 200:1 expansion ratio. Reject an encrypted inner
+ZIP or invalid member CRC. These limits comfortably exceed the normal materials
+package; stop and report a mismatch rather than bypassing them. Extract into a
+NEW temporary staging directory. Check each
 file against `course-download/package-files.json`, and confirm the archive has
 only the members listed in `release.json`.
 
