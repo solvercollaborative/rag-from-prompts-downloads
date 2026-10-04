@@ -13,27 +13,29 @@ Need Codex first? Follow the [official setup guide](https://learn.chatgpt.com/do
 Open the app, follow its sign-in screens, and select Codex for software development.
 Create a dedicated local folder named `rag-from-prompts-course-01`.
 
-**Current materials: Course 1 / workshop-draft-0.52.** These are workshop-draft
-learning materials. The recorded draft-0.48 reference completed all 25 builds,
-immediate repeats and a full replay after documented corrections. Draft 0.49
-adds security guidance and package-hash requirements; its hash-lock correction
-was tested separately, and its complete 75-gate execution has not been rerun. Focused
-application demonstrations were checked against actual source passages. Other
-evaluation questions exposed incorrect or incomplete answers; a few successful
-examples do not promise correct answers to every question. Fresh-machine setup
-and a student pilot remain unrun. Draft 0.50 corrects the referenced book title;
-application behavior and build prompts are unchanged from draft 0.49. Draft 0.51
-clarifies the instructor testing system and assistant-led download verification.
-Draft 0.52 distinguishes reviews on the instructor's Mac from student installation
-checks; the instructor review does not inspect student Macs.
-The download contains materials for building
-your app, with no completed application bundled.
+**Current materials: Course 1 / workshop-draft-0.53.** These are workshop-draft
+learning materials. This edition supplies a small security checker that Codex
+runs on the student's own Mac before app package installation and execution.
+It prepares a reviewed pip installer, checks proposed and installed packages,
+and checks selected code patterns. Failed or incomplete checks stop affected
+execution. This reduces risk; it is not a sandbox or a guarantee of safe software.
+
+The draft-0.48 reference completed all 25 builds, immediate repeats and a full
+replay after documented corrections. Draft 0.49 added package-hash requirements.
+Draft 0.53's added security controls were separately tested with real downloads
+in a fresh Python environment and a complete reference copy; 260 framework tests
+passed. The complete 75-gate course execution has not been rerun for this edition.
+A fresh Mac installation and student pilot remain unrun. Focused app demonstrations
+were checked against source passages, while other evaluation questions exposed
+incorrect or incomplete answers. A few successful examples do not promise
+correct answers to every question. The download contains materials for building
+your app, with no completed RAG application bundled.
 
 Copy this message into Codex, replacing the passphrase placeholder:
 
 > Help me start Course 1 on this Mac. The download repository is
 > https://github.com/solvercollaborative/rag-from-prompts-downloads and my edition
-> is workshop-draft-0.52. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
+> is workshop-draft-0.53. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
 > Read the repository's SETUP.md and release.json for that edition. Download and
 > verify the encrypted package, decrypt it, and put the materials in my dedicated
 > rag-from-prompts-course-01 folder, preserving any existing work. Handle the
@@ -58,6 +60,7 @@ One encrypted ZIP archive contains:
 - The prepared course prose for the local RAG app, at `app/data/books/course.md`.
 - All 25 prompt handouts, an original-prompt baseline, and learner examples.
 - Edition information, file fingerprints, and starting instructions.
+- Four supplied student-local security files used by Codex from Prompt 03 onward.
 
 The prepared prose retains the course explanations; it removes fenced code and
 marked exercises/answer keys so evaluation answers do not become retrieval evidence.

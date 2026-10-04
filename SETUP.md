@@ -15,7 +15,7 @@ For that edition, read `course-01/<edition>/release.json` and confirm its `editi
 field matches. Download the encrypted archive named in that manifest to a temporary
 directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
 `course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.52` uses `course-01-workshop-draft-0.52`.
+`workshop-draft-0.53` uses `course-01-workshop-draft-0.53`.
 
 Do not silently substitute a newer or older edition. If no edition was supplied,
 ask the student which materials they received. If the requested edition has not
@@ -103,3 +103,17 @@ install its tools, or run all 25 prompts during download setup.
 The full text at `course-download/course-book.md` preserves the manuscript's
 image references, but separate artwork files are not bundled; the PDF provides
 the illustrations. The app does not need the PDF or those images for ingestion.
+
+## Student-local security files
+
+The encrypted package includes course-download/security/student_security.py,
+security_review.py, security-policy.json and tools.json. Verify all four against
+the selected edition's member manifest before executing them. Download setup
+places them but does not execute them or install app packages. Prompt 03 uses
+the trusted Python selected in Prompt 02 to prepare a reviewed official pip wheel
+without running an older pip, then performs guarded package installation.
+Prompts 03-25 require current local checks before new or changed app/test code.
+Private reports belong in the exact sibling directory PROJECT-security-reports,
+outside the learner project and Git. The student reads the assistant's result;
+no additional terminal command or app entry is required. These checks are bounded
+risk controls, not a sandbox or proof that upstream code is harmless.
