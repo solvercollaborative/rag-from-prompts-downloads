@@ -15,7 +15,7 @@ For that edition, read `course-01/<edition>/release.json` and confirm its `editi
 field matches. Download the encrypted archive named in that manifest to a temporary
 directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
 `course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.53` uses `course-01-workshop-draft-0.53`.
+`workshop-draft-0.54` uses `course-01-workshop-draft-0.54`.
 
 Do not silently substitute a newer or older edition. If no edition was supplied,
 ask the student which materials they received. If the requested edition has not
@@ -95,8 +95,8 @@ Report the selected edition, whether all download and extracted-file checks
 passed, the destination folder, and any existing files preserved or skipped.
 Keep this confirmation short and use plain language.
 
-Open `course-download/course-book.pdf`. Show the student `prompts/01.md` and explain
-that only its fenced text build prompt should be sent for execution. Stop here.
+Open `course-download/course-book.pdf`. Show the student `prompts/00.md` and explain
+that only its fenced text preparation prompt should be sent for execution. Stop here.
 Prompt 6 will create the app source manifest; do not prebuild application code,
 install its tools, or run all 25 prompts during download setup.
 
@@ -117,3 +117,13 @@ Private reports belong in the exact sibling directory PROJECT-security-reports,
 outside the learner project and Git. The student reads the assistant's result;
 no additional terminal command or app entry is required. These checks are bounded
 risk controls, not a sandbox or proof that upstream code is harmless.
+
+## Project memory preparation
+
+The download supplies course-download/course-rules.md and an immutable shared-rule
+text/hash in course-origin.json. Setup places these verified files but does not
+create an active AGENTS.md. Prompt 00 creates it once in the project root, reads
+it and preserves an existing customized copy. Keep that active file and editable
+prompts in Git from Prompt 03; preserve the immutable original baseline. Do not
+change global assistant settings or initialize Git during download setup. The
+25 application-building prompts retain their numbers after the preparation step.
