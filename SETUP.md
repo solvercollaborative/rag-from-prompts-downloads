@@ -15,7 +15,7 @@ For that edition, read `course-01/<edition>/release.json` and confirm its `editi
 field matches. Download the encrypted archive named in that manifest to a temporary
 directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
 `course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.58` uses `course-01-workshop-draft-0.58`.
+`workshop-draft-0.59` uses `course-01-workshop-draft-0.59`.
 
 Do not silently substitute a newer or older edition. If no edition was supplied,
 ask the student which materials they received. If the requested edition has not

@@ -15,7 +15,7 @@ Need Codex first? Follow the [official setup guide](https://learn.chatgpt.com/do
 Open the app, follow its sign-in screens, and select Codex for software development.
 Create a dedicated local folder named `rag-from-prompts-course-01`.
 
-**Current materials: Course 1 / workshop-draft-0.58.** These are workshop-draft
+**Current materials: Course 1 / workshop-draft-0.59.** These are workshop-draft
 learning materials. The introduction explains what you build and why. Separate
 assistant setup and download sections precede Chapter 0, which focuses on project
 memory and the seven-part prompt template. Chapter 1 explains hardware, Git and
@@ -27,13 +27,17 @@ reviewed pip preparation, guarded wheel/hash installation and current package/co
 checks. Failed or incomplete checks stop affected execution. These are bounded
 risk controls, not a sandbox or a guarantee of safe software.
 
-This edition clarifies Appendix B: one standard shared-instructions file becomes
-project-local AGENTS.md through Prompt 00. The appendix is a reading reference,
-not an additional prompt to paste. Publication checks verify the original rules,
-all appendix headings, navigation and the encrypted package. All 26 handouts and
-shared rules are unchanged from draft 0.57. Draft 0.55 previously passed all 269
-framework tests; five fresh Codex preparation sessions were performed for draft
-0.54. The full 78-phase course execution has not been rerun.
+This edition adds larger highlighted introductions to all 52 contents sections.
+They form a plain-English story from setup to the finished app, labeled Book
+tour and Book tour, continued. About the artwork labels identify illustration
+commentary. The overview stays inside the illustrated book; no separate compact
+copy is included.
+Allow about 15-30 minutes with pauses for pictures and discussion; completing
+the exercises takes longer. All 26 prompt handouts and shared rules are unchanged
+from draft 0.58. Publication and package checks passed; no new full application
+execution or answer-quality evaluation is claimed. Draft 0.55 previously passed
+all 269 framework tests, and five fresh Codex preparation sessions were performed
+for draft 0.54. The full 78-phase course execution has not been rerun.
 The draft-0.48 reference completed its 25 builds, repeats and full replay after
 documented corrections; draft 0.53 separately tested the added security controls
 with real downloads and a complete reference copy. A fresh Mac installation and
@@ -46,7 +50,7 @@ Copy this message into Codex, replacing the passphrase placeholder:
 
 > Help me start Course 1 on this Mac. The download repository is
 > https://github.com/solvercollaborative/rag-from-prompts-downloads and my edition
-> is workshop-draft-0.58. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
+> is workshop-draft-0.59. My materials passphrase is: REPLACE_WITH_YOUR_PASSPHRASE.
 > Read the repository's SETUP.md and release.json for that edition. Download and
 > verify the encrypted package, decrypt it, and put the materials in my dedicated
 > rag-from-prompts-course-01 folder, preserving any existing work. Handle the
