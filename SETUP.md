@@ -4,6 +4,14 @@ These steps are for the coding assistant. The student supplies a repository link
 and materials passphrase in the conversation; do not ask them to run commands or
 type the phrase into a private terminal prompt themselves.
 
+## Edition-specific setup
+
+Read `course-01/<requested-edition>/release.json` first. When it names
+`setup_instructions`, read that file beside the release manifest and follow it
+for that exact edition. Its instructions take precedence over the legacy setup
+below. For `workshop-draft-0.81-codex`, use
+`course-01/workshop-draft-0.81-codex/SETUP.md`.
+
 ## 1. Select and download
 
 Confirm you are operating locally on the student's Mac in their dedicated learner
