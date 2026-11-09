@@ -12,6 +12,14 @@ for that exact edition. Its instructions take precedence over the legacy setup
 below. For `workshop-draft-0.81-codex`, use
 `course-01/workshop-draft-0.81-codex/SETUP.md`.
 
+## Current Mac book editions
+
+Version 0.82 provides `workshop-draft-0.82-codex` and
+`workshop-draft-0.82-claude-code`. Read the exact requested release’s adjacent
+SETUP.md. It identifies the correct assistant, materials and source version.
+The legacy instructions below remain for earlier releases that have no
+edition-specific setup file.
+
 ## 1. Select and download
 
 Confirm you are operating locally on the student's Mac in their dedicated learner
