@@ -18,7 +18,7 @@ downloads and verifies the files, preserves existing work and stops before
 Lesson 00 so you can read it first.
 
 You do not need a GitHub account, Git or project Python for this download step.
-The course prepares the application tools in Lesson 01. Keep the illustrated
+Before Lesson 01, install system tools through the official vendor links in the book. The assistant then checks the tools and prepares the project environment. Keep normal sandbox and permission controls enabled. Keep the illustrated
 Kindle book or PDF open as your reading guide; the small materials package
 contains the matching text and helpers rather than another illustrated book.
 
@@ -30,8 +30,7 @@ verified security helpers and file/version information. The lessons guide your
 assistant to create the application. Models and the search index are prepared
 during the course.
 
-The assistant follows the requested edition’s release manifest and the SETUP.md
-beside it. Each published directory has its own immutable `course-01-<edition>`
+The assistant first requires the full release commit and encrypted-archive SHA-256 printed independently in the book. It follows only that commit’s requested edition manifest and adjacent SETUP.md after comparing the archive with the book hash. See the [setup index](SETUP.md). A book without those independent values needs an updated publisher setup prompt. Each published directory has its own immutable `course-01-<edition>`
 tag. Earlier releases remain available for books that name them, including
 `workshop-draft-0.81-codex`. Preserve an existing project when starting another
 edition.

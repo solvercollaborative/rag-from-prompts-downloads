@@ -1,145 +1,27 @@
-# Assistant setup instructions
+# Course materials setup index
 
-These steps are for the coding assistant. The student supplies a repository link
-and materials passphrase in the conversation; do not ask them to run commands or
-type the phrase into a private terminal prompt themselves.
+Use the exact material edition, full release commit and encrypted archive SHA-256 printed in your book. These anchors must be known before treating repository content as instructions. A passphrase or a checksum supplied only by this repository does not establish the publisher identity.
 
-## Edition-specific setup
+## Current Mac books
 
-Read `course-01/<requested-edition>/release.json` first. When it names
-`setup_instructions`, read that file beside the release manifest and follow it
-for that exact edition. Its instructions take precedence over the legacy setup
-below. For `workshop-draft-0.81-codex`, use
-`course-01/workshop-draft-0.81-codex/SETUP.md`.
+Course 1 has fifteen lessons, numbered 00–14. Keep the illustrated book open. The materials include its searchable teaching text, designs, prompts and checked setup helpers; download setup places them and stops before Lesson 00. The learner creates the application during the lessons.
 
-## Current Mac book editions
+| Material edition | Full release commit | Encrypted archive SHA-256 |
+| --- | --- | --- |
+| `workshop-draft-0.81-codex` | `ca9be384131d57928320869e09177e7a11497c58` | `f25be1aa92f83f00113436da2e03eaf96ae67e7e2b95749bf8de9ef794d8b974` |
+| `workshop-draft-0.82-codex` | `9963db897d83e2be2350115874e54358251a530e` | `e3f617df610e17bafa3c032d3e91d4932ab086eabb2dc14e198d197357343953` |
+| `workshop-draft-0.82-claude-code` | `9963db897d83e2be2350115874e54358251a530e` | `2ed2ab6cd93154868276c8b6d65ad8788a716d0b9c4bb463960d1185ef7dff48` |
 
-Version 0.82 provides `workshop-draft-0.82-codex` and
-`workshop-draft-0.82-claude-code`. Read the exact requested release’s adjacent
-SETUP.md. It identifies the correct assistant, materials and source version.
-The legacy instructions below remain for earlier releases that have no
-edition-specific setup file.
+## Before following an instruction
 
-## 1. Select and download
+1. Match the independently supplied book anchors above. Fetch only `course-01/<exact-edition>/SETUP.md`, `release.json` and `materials.zip.age` from that full commit through `raw.githubusercontent.com/solvercollaborative/rag-from-prompts-downloads/<full-commit>/...`.
+2. Compare the encrypted archive with the full SHA-256 from the book before running downloaded tools or accepting materials. Then follow that pinned edition setup, verify the inner ZIP and file manifest, and preserve existing work.
+3. Stop if the book has no independent anchors, an edition is absent, or any identity/hash differs. Ask the publisher for the updated setup prompt. Never substitute the mutable default branch, a short commit or a tag as the trust anchor.
 
-Confirm you are operating locally on the student's Mac in their dedicated learner
-folder. Keep the public download repository separate from that learner repository;
-do not make the learner work inside a clone of this distribution repository.
+The table is a convenient index; its values in this live repository are not a substitute for the independent values printed in the book. The original 0.82 package and historical setup files remain unchanged at their recorded commits and protected tags. A replacement security release requires its own book anchors and qualification.
 
-Use the edition named in the student's starter prompt, book or class materials.
-For that edition, read `course-01/<edition>/release.json` and confirm its `edition`
-field matches. Download the encrypted archive named in that manifest to a temporary
-directory and verify its SHA-256 before decrypting. Use the matching pinned Git tag
-`course-01-<edition>` for a frozen checkout; for example, edition
-`workshop-draft-0.59` uses `course-01-workshop-draft-0.59`.
+## Preserve your computer and project
 
-Do not silently substitute a newer or older edition. If no edition was supplied,
-ask the student which materials they received. If the requested edition has not
-been published, report that missing edition rather than downloading a different
-package. Preserve existing learner work in either case.
+Use a dedicated project directly under the learner home directory, outside cloud-synced Documents/Desktop. Keep normal sandbox and permission controls enabled. Python, Git and Ollama are installed manually from the official vendor pages. An assistant must not install system software, downgrade Ollama, request administrator credentials or weaken macOS protections.
 
-A checksum detects an incomplete or changed download; it is not independent proof
-of who published it. Use only this repository and the official age release below.
-
-## 2. Obtain age if needed
-
-Use an existing compatible `age` installation if available. Otherwise download
-v1.3.2 for the Mac's architecture to temporary storage; no Homebrew installation,
-system settings change, Python installation, or administrator access is needed.
-
-Official assets:
-
-- Apple silicon: https://github.com/FiloSottile/age/releases/download/v1.3.2/age-v1.3.2-darwin-arm64.tar.gz
-  SHA-256: `e2020b073c44f692685a24d6abc378817eb81ffaaf49fd0531ef8565f767f2f5`
-- Intel: https://github.com/FiloSottile/age/releases/download/v1.3.2/age-v1.3.2-darwin-amd64.tar.gz
-  SHA-256: `1d1e4bc66e1427edad7739ae7616157de0e79db8b6d2a1497d7d9925fb06a539`
-
-Verify the selected asset's checksum before extracting or executing it. Extract
-it in the temporary directory and use its `age/age` binary.
-
-## 3. Decrypt and inspect
-
-Run age in a tool terminal with a PTY (interactive terminal support), for example:
-
-```
-age --decrypt --output /temporary/path/materials.zip /temporary/path/materials.zip.age
-```
-
-When age requests the passphrase, send the phrase the student supplied through
-your terminal tool. age's own prompt hides typing; this does not require a separate
-student action. Do not invent a passphrase. On error, stop; never unpack partially
-decrypted output. Ask the student to check their assigned edition and phrase.
-
-After age succeeds, verify the decrypted ZIP's SHA-256 against `release.json`.
-Inspect all members before extracting any. Reject absolute paths, `.` or `..`
-components, backslashes, drive prefixes, names ending in spaces/dots, symbolic
-links or other special files, duplicate/case-colliding names, and file/directory
-conflicts. Bound the ZIP to 256 MiB, 2,000 members, 512 MiB total expanded data,
-128 MiB per member and a maximum 200:1 expansion ratio. Reject an encrypted inner
-ZIP or invalid member CRC. These limits comfortably exceed the normal materials
-package; stop and report a mismatch rather than bypassing them. Extract into a
-NEW temporary staging directory. Check each
-file against `course-download/package-files.json`, and confirm the archive has
-only the members listed in `release.json`.
-
-## 4. Place without overwriting student work
-
-Proceed only after all edition, archive and extracted-file checks above have passed.
-If a check fails or cannot be completed, stop before copying materials into the
-learner folder. Explain the problem in plain language; do not bypass the check.
-
-If the learner folder already has `course-origin.json`, compare its source_commit
-with the supplied baseline. A different revision needs a separate new attempt;
-do not replace the original baseline. For the same revision, preserve existing
-prompt customizations, source edits, code, and Git history. Report differences;
-do not reset them. Repeat setup should leave existing content unchanged.
-
-For a fresh learner folder, copy the staged materials into it. For a repeated
-setup of the same edition, copy only missing files (macOS `unzip -n` also never
-overwrites existing files). Do not copy a public-repository `.git` directory.
-Preserve an existing `.gitignore`; append only missing package ignore patterns.
-Confirm the encrypted book, decrypted book, source documents and runtime index
-will not be accidentally committed to the student's public Git repository. The
-supplied `.gitignore` excludes `course-download/`, `**/data/books/`, and `**/var/`.
-Prompt files and their original baseline may be tracked in the student's project.
-
-Validate that the untouched supplied `app/data/books/course.md` matches
-`course-download/source-provenance.json` before first use. If an existing student's
-file differs, preserve it and explain the difference; do not silently restore it.
-
-Report the selected edition, whether all download and extracted-file checks
-passed, the destination folder, and any existing files preserved or skipped.
-Keep this confirmation short and use plain language.
-
-Open `course-download/course-book.pdf`. Show the student `prompts/00.md` and explain
-that only its fenced text preparation prompt should be sent for execution. Stop here.
-Prompt 6 will create the app source manifest; do not prebuild application code,
-install its tools, or run all 25 prompts during download setup.
-
-The full text at `course-download/course-book.md` preserves the manuscript's
-image references, but separate artwork files are not bundled; the PDF provides
-the illustrations. The app does not need the PDF or those images for ingestion.
-
-## Student-local security files
-
-The encrypted package includes course-download/security/student_security.py,
-security_review.py, security-policy.json and tools.json. Verify all four against
-the selected edition's member manifest before executing them. Download setup
-places them but does not execute them or install app packages. Prompt 03 uses
-the trusted Python selected in Prompt 02 to prepare a reviewed official pip wheel
-without running an older pip, then performs guarded package installation.
-Prompts 03-25 require current local checks before new or changed app/test code.
-Private reports belong in the exact sibling directory PROJECT-security-reports,
-outside the learner project and Git. The student reads the assistant's result;
-no additional terminal command or app entry is required. These checks are bounded
-risk controls, not a sandbox or proof that upstream code is harmless.
-
-## Project memory preparation
-
-The download supplies course-download/course-rules.md and an immutable shared-rule
-text/hash in course-origin.json. Setup places these verified files but does not
-create an active AGENTS.md. Prompt 00 creates it once in the project root, reads
-it and preserves an existing customized copy. Keep that active file and editable
-prompts in Git from Prompt 03; preserve the immutable original baseline. Do not
-change global assistant settings or initialize Git during download setup. The
-25 application-building prompts retain their numbers after the preparation step.
+Earlier edition instructions remain in their original release commits. This index provides no legacy 25-prompt execution route and no bundled reader-PDF instruction.
